@@ -1,4 +1,26 @@
 const Header = (title, date, temp) => {
+
+  const headWrap = document.createElement('div')
+  headWrap.classList.add('header')
+  
+  const headTitle = document.createElement('h1')
+  headTitle.textContent = title
+
+  const headDate = document.createElement('span')
+  headDate.classList.add('date')
+  headDate.textContent = date
+
+  const headTemp = document.createElement('span')
+  headTemp.classList.add('temp')
+  headTemp.textContent = temp
+
+  headWrap.appendChild(headDate)
+  headWrap.appendChild(headTitle)
+  headWrap.appendChild(headTemp)
+
+  return headWrap
+
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -13,7 +35,16 @@ const Header = (title, date, temp) => {
   //
 }
 
+// console.log(Header('big boy', 'sept', 'real hot'))
+
 const headerAppender = (selector) => {
+
+  document.querySelector(`${selector}`).appendChild(Header('Justin Turner does it again', 'September', '80 degrees')
+  )
+
+
+
+
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
